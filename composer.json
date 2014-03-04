@@ -29,7 +29,7 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "Ant\\MediaBundle\\": "src/" }
+        "psr-4": { "Ant\\MediaBundle\\": "" }
     },
     "minimum-stability": "dev",
     "extra": {
