@@ -29,9 +29,8 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "Application\\Sonata\\MediaBundle": "" }
+        "psr-0": { "Ant\\MediaBundle": "" }
     },
-    "target-dir": "Application/Sonata/MediaBundle",
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
