@@ -29,8 +29,9 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-4": { "Ant\\MediaBundle\\": "" }
+        "psr-0": { "Ant\\MediaBundle": "" }
     },
+    "target-dir": "Ant/MediaBundle",
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
