@@ -1,36 +1,18 @@
 {
     "name": "ant/mediabundle",
     "license": "MIT",
-    "type": "bundle",
-    "description": "The Ant First Edition",
+    "type": "symfony-bundle",
+    "description": "Media Bundle for the Ant First Edition",
 
     "require": {
         "php": ">=5.3.3",
         "sonata-project/media-bundle": "2.2.x-dev"
 
     },
-    "scripts": {
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ]
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload": {
-        "psr-4": { "Ant\\MediaBundle\\": "" }
+        "psr-0": { "Ant\\MediaBundle": "" }
     },
+    "target-dir": "Ant/MediaBundle",
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
