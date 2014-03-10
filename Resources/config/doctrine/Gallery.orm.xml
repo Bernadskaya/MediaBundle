@@ -16,8 +16,10 @@
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
-        <one-to-one field="portfolio" target-entity="Ant\WebBundle\Entity\Portfolio" mapped-by="gallery" orphan-removal="true">
-            <cascade><cascade-all/></cascade>
-        </one-to-one>
+
+        <field name="description"/>
+        <!--<one-to-one field="portfolio" target-entity="Ant\WebBundle\Entity\Portfolio" mapped-by="gallery" orphan-removal="true">-->
+            <!--<cascade><cascade-all/></cascade>-->
+        <!--</one-to-one>-->
     </entity>
 </doctrine-mapping>

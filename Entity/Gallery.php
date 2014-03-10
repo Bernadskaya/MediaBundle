@@ -28,6 +28,20 @@ class Gallery extends BaseGallery
      */
     protected $id;
 
+
+    protected $description;
+
+    public function setDescription($description){
+        $this->description = $description;
+
+        return $this;
+    }
+
+
+    public function getDescription(){
+        return $this->description;
+    }
+
     /**
      * Get id
      *
@@ -38,31 +52,5 @@ class Gallery extends BaseGallery
         return $this->id;
     }
 
-    /**
-     * @var \Ant\WebBundle\Entity\Portfolio
-     */
-    private $portfolio;
-    /**
-     * Set portfolio
-     *
-     * @param \Ant\WebBundle\Entity\Portfolio $portfolio
-     *
-     * @return Media
-     */
-    public function setPortfolio($portfolio = null)
-    {
-        $this->portfolio = $portfolio;
 
-        return $this;
-    }
-
-    /**
-     * Get portfolio
-     *
-     * @return \Ant\WebBundle\Entity\Portfolio
-     */
-    public function getPortfolio()
-    {
-        return $this->portfolio;
-    }
 }
