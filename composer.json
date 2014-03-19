@@ -5,9 +5,8 @@
     "description": "Media Bundle for the Ant First Edition",
 
     "require": {
-        "php": ">=5.3.3",
-        "sonata-project/media-bundle": "2.2.x-dev"
-
+        "sonata-project/media-bundle": "2.2.8",
+        "liip/imagine-bundle": "0.20.2"
     },
     "autoload": {
         "psr-0": { "Ant\\MediaBundle": "" }
@@ -16,7 +15,7 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.1.0"
         }
     }
 }
