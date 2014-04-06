@@ -1,5 +1,6 @@
 {
     "name": "ant/mediabundle",
+    "version": "1.1.0",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Media Bundle for the Ant First Edition",
