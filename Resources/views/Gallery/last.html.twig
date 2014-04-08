@@ -1,0 +1,6 @@
+<ul>
+    {% for gallery in pagination %}
+        <li><a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid }) }}">{{ gallery.name }}</a></li>
+        {{ render(controller('AntMediaBundle:Gallery:thumb', { 'id': gallery|sonata_urlsafeid } )) }}
+    {% endfor %}
+</ul>

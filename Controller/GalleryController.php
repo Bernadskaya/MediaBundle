@@ -31,6 +31,30 @@ class GalleryController extends Controller
     }
 
     /**
+     * @return \Symfony\Bundle\FrameworkBundle\Controller\Response
+     */
+    public function lastAction($max)
+    {
+
+        $galleries = $this->get('sonata.media.manager.gallery')->findBy(array(
+            'enabled' => true
+        ));
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $galleries,
+            $this->get('request')->query->get('page', 1)/*page number*/,
+            $max/*limit per page*/
+        );
+
+        return $this->render('AntMediaBundle:Gallery:last.html.twig', array(
+            'galleries'   => $galleries,
+            'pagination' => $pagination
+
+        ));
+    }
+
+    /**
      * @param string $id
      *
      * @return \Symfony\Bundle\FrameworkBundle\Controller\Response
