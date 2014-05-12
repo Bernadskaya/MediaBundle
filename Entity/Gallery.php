@@ -28,19 +28,17 @@ class Gallery extends BaseGallery
      */
     protected $id;
 
+    /**
+     * @var string $link
+     *
+     */
+    private $link;
 
+    /**
+     * @var string $description
+     *
+     */
     protected $description;
-
-    public function setDescription($description){
-        $this->description = $description;
-
-        return $this;
-    }
-
-
-    public function getDescription(){
-        return $this->description;
-    }
 
     /**
      * Get id
@@ -52,5 +50,29 @@ class Gallery extends BaseGallery
         return $this->id;
     }
 
+    public function setDescription($description){
+        $this->description = $description;
+        return $this;
+    }
+
+
+    /**
+     * Get Description
+     *
+     * @return string $description
+     */
+    public function getDescription(){
+        return $this->description;
+    }
+
+
+    public function setLink ($link) {
+        $this->link = $link;
+        return $this;
+    }
+
+    public function getLink(){
+        return $this->link;
+    }
 
 }

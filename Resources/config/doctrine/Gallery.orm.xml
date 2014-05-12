@@ -17,9 +17,9 @@
             <generator strategy="AUTO"/>
         </id>
 
-        <field name="description"/>
-        <!--<one-to-one field="portfolio" target-entity="Ant\WebBundle\Entity\Portfolio" mapped-by="gallery" orphan-removal="true">-->
-            <!--<cascade><cascade-all/></cascade>-->
-        <!--</one-to-one>-->
+        <field name="description" type="string"/>
+
+        <field name="link" type="string"/>
+
     </entity>
 </doctrine-mapping>

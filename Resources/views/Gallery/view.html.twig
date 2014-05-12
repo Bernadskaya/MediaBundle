@@ -1,25 +1,52 @@
-{#
+{% extends 'AntWebBundle::layout.html.twig' %}
+{% block content %}
+    <div class="container">
+        <h1 class="page-top-header">Портфолио</h1>
+        <ol class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li class="active">Галерея</li>
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <div class="gallery">
+            {% for galleryHasMedia in gallery.GalleryHasMedias %}
+                {% if loop.first %}
+                    <div class="row margin-bottom-large">
+                        <div class="col-sm-12">
+                            <a href="{% path galleryHasMedia.media, 'gallery' %}" title="{{ gallery.name }}">
+                                <img src="{% path galleryHasMedia.media, 'carousel' %}" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                {% elseif loop.last == false %}
+                    <div class="col-sm-4">
+                        <a href="{% path galleryHasMedia.media, 'gallery' %}" title="{{ gallery.name }}">
+                            <img src="{% path galleryHasMedia.media, 'gallery_thumb' %}" alt="" />
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="col-sm-4">
+                        <a href="{% path galleryHasMedia.media, 'gallery' %}" title="{{ gallery.name }}">
+                            <img src="{% path galleryHasMedia.media, 'gallery_thumb' %}" alt="" />
+                        </a>
 
-This file is part of the Sonata package.
+                    </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div><!-- .col-xx-x -->
 
-(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+    <div class="col-md-4">
+        <h5 class="page-header">{{ gallery.name }}</h5>
+        <p>
+            {{ gallery.description }}
+        </p>
 
-For the full copyright and license information, please view the LICENSE
-file that was distributed with this source code.
+        <div class="text-center">
+            <a href="{{ gallery.link }}" class="btn btn-primary" target="blank">Перейти на сайт</a>
+        </div>
+    </div><!-- .row -->
 
-#}
-
-
-<h1>{{ gallery.name }}</h1>
-
-<div class="sonata-media-gallery-media-list">
-    {% for galleryHasMedia in gallery.GalleryHasMedias %}
-            <a class="pull-left sonata-media-gallery-media-item-link" href="{{ url('sonata_media_view', {'id': galleryHasMedia.media|sonata_urlsafeid }) }}">
-                {% thumbnail galleryHasMedia.media, gallery.defaultFormat with {'class': 'media-object'} %}
-            </a>
-            <div class="media-body">
-                <p>{{ galleryHasMedia.media.description|raw }}</p>
-            </div>
-
-    {% endfor %}
-</div>
+{% endblock %}
