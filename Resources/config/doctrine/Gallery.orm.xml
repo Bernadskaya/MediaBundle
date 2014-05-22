@@ -12,14 +12,10 @@
         name="Ant\MediaBundle\Entity\Gallery"
         table="media__gallery"
         >
-
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
-
-        <field name="description" type="string"/>
-
-        <field name="link" type="string"/>
-
+        <field name="description" type="string"  nullable="true"/>
+        <field name="link" type="string"  nullable="true"/>
     </entity>
 </doctrine-mapping>
