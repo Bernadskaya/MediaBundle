@@ -1,0 +1,7 @@
+sonata_media_gallery_index:
+    pattern:  /
+    defaults: { _controller: "AntMediaBundle:Gallery:index" }
+
+sonata_media_gallery_view:
+    pattern:  /{id}-{slug}
+    defaults: { _controller: "AntMediaBundle:Gallery:view" }
