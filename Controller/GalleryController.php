@@ -23,7 +23,8 @@ class GalleryController extends Controller
     {
         $galleries = $this->get('sonata.media.manager.gallery')->findBy(array(
             'enabled' => true
-        ));
+        ),
+            array('createdAt'=>'DESC'));
 
         return $this->render('AntMediaBundle:Gallery:index.html.twig', array(
             'galleries'   => $galleries,
