@@ -1,7 +1,6 @@
 {% extends 'AntWebBundle::layout.html.twig' %}
 {% block content %}
 
-
     <div class="page-top">
         <div class="container">
             <h1 class="page-top-header">Как это выглядит?</h1>
@@ -49,7 +48,12 @@
                 <p>
                     {{ gallery.description }}
                 </p>
-
+                <p>Категории:</p>
+                {% for category in gallery.categories %}
+                    <p>
+                        {{ category.name }}
+                    </p>
+                {% endfor %}
                 <div class="text-center">
                     <a href="{{ gallery.link }}" class="btn btn-primary" target="blank">Перейти на сайт</a>
                 </div>

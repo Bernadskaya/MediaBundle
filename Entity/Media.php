@@ -39,8 +39,6 @@ class Media extends BaseMedia
     private $ad;
 
 
-//    protected $uploadFile;
-
     /**
      * Get id
      *
@@ -100,10 +98,4 @@ class Media extends BaseMedia
     }
 
 
-//    public function preUpload()
-//    {
-//        if ($this->uploadFile) {
-//            $this->path = sha1(uniqid()).'.'.$this->uploadFile->guessExtension();
-//        }
-//    }
 }
