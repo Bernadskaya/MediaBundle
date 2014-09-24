@@ -1,0 +1,16 @@
+{% for entity in otherGalleries %}
+    <li>
+        <a href="{{ url('sonata_media_gallery_view', {'id' : entity|sonata_urlsafeid,'slug': entity.slug }) }}">
+
+            {% for galleryHasMedia in entity.GalleryHasMedias %}
+                {% if loop.first %}
+                    <img src="{% path galleryHasMedia.media, 'small' %}"/>
+                {% endif %}
+            {% endfor %}
+
+            <span class="header">
+                                    {{ entity.name }}
+                                </span>
+        </a>
+    </li>
+{% endfor %}

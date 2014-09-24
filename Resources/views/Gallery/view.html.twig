@@ -59,6 +59,10 @@
                 </div>
             </div>
         </div><!-- .row -->
+    <div class="row">
+        <ul class="nav nav-pills">
+            {{ render(controller('AntMediaBundle:Gallery:other', { 'id': gallery|sonata_urlsafeid , 'max' : '3' } )) }}
+        </ul>
     </div>
 
 {% endblock %}

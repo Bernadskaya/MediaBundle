@@ -11,9 +11,12 @@ namespace Ant\MediaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sonata\MediaBundle\Controller\GalleryController as BaseGalleryController;
 
+use Ant\MediaBundle\Entity\Gallery;
+use Ant\MediaBundle\Entity\GalleryRepository;
 
-class GalleryController extends Controller
+class GalleryController extends BaseGalleryController
 {
 
     /**
@@ -26,6 +29,8 @@ class GalleryController extends Controller
             ),
             array('createdAt'=>'DESC')
         );
+
+
 
         return $this->render('AntMediaBundle:Gallery:index.html.twig', array(
             'galleries'   => $galleries,
@@ -75,8 +80,10 @@ class GalleryController extends Controller
             throw new NotFoundHttpException('unable to find the gallery with the id');
         }
 
+
+
         return $this->render('AntMediaBundle:Gallery:view.html.twig', array(
-            'gallery'   => $gallery,
+            'gallery'   => $gallery
         ));
     }
 
@@ -92,6 +99,16 @@ class GalleryController extends Controller
 
         return $this->render('AntMediaBundle:Gallery:thumb.html.twig', array(
             'gallery'   => $gallery,
+        ));
+    }
+
+    public function otherAction ($id, $max)
+    {
+
+        $em = $this->getDoctrine();
+        $otherGalleries = $em->getRepository('AntMediaBundle:Gallery')->findOther($id,$max);
+        return $this->render('AntMediaBundle:Gallery:other.html.twig', array(
+            'otherGalleries'   => $otherGalleries,
         ));
     }
 
