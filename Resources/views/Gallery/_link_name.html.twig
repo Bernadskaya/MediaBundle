@@ -1,1 +1,8 @@
-<a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid,'slug': gallery.slug }) }}">{{ gallery.name }}</a>
+<li class="{% for category in gallery.categories %}{{ category.name }}{% endfor %}">
+    <a href="{{ url('sonata_media_gallery_view', {'id' : gallery|sonata_urlsafeid,'slug': gallery.slug }) }}">
+        {{ render(controller('AntMediaBundle:Gallery:thumb', { 'id': gallery|sonata_urlsafeid } )) }}
+        <span class="header">
+                                    {{ gallery.name }}
+                                </span>
+    </a>
+</li>

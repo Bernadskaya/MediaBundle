@@ -1,9 +1,5 @@
 {% for galleryHasMedia in gallery.GalleryHasMedias %}
     {% if loop.first %}
-        <div class="media sonata-media-gallery-media-item">
-            <a class="pull-left sonata-media-gallery-media-item-link" href="{{ url('sonata_media_view', {'id': galleryHasMedia.media|sonata_urlsafeid }) }}">
-            </a>
-
-        </div>
+        <img src="{% path galleryHasMedia.media, 'small' %}"/>
     {% endif %}
 {% endfor %}

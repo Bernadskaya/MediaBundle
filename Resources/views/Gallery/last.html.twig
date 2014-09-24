@@ -1,8 +1,5 @@
-<ul>
+<ul  class="portfolio columns3">
     {% for gallery in pagination %}
-        <li>
-            {{ include('AntMediaBundle:Gallery:_link_name.html.twig') }}
-        </li>
-        {{ render(controller('AntMediaBundle:Gallery:thumb', { 'id': gallery|sonata_urlsafeid } )) }}
+        {{ include('AntMediaBundle:Gallery:_link_name.html.twig') }}
     {% endfor %}
 </ul>

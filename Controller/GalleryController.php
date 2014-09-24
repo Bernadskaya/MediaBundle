@@ -22,9 +22,10 @@ class GalleryController extends Controller
     public function indexAction()
     {
         $galleries = $this->get('sonata.media.manager.gallery')->findBy(array(
-            'enabled' => true
-        ),
-            array('createdAt'=>'DESC'));
+                'enabled' => true
+            ),
+            array('createdAt'=>'DESC')
+        );
 
         return $this->render('AntMediaBundle:Gallery:index.html.twig', array(
             'galleries'   => $galleries,
@@ -38,8 +39,10 @@ class GalleryController extends Controller
     {
 
         $galleries = $this->get('sonata.media.manager.gallery')->findBy(array(
-            'enabled' => true
-        ));
+                'enabled' => true
+            ),
+            array('createdAt'=>'DESC')
+        );
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(

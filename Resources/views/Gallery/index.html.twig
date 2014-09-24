@@ -1,9 +1,8 @@
-<ul>
-    {% for gallery in galleries %}
-        <li>
+{% extends 'AntWebBundle::layout.html.twig' %}
+{% block content %}
+    <ul>
+        {% for gallery in galleries %}
             {{ include('AntMediaBundle:Gallery:_link_name.html.twig') }}
-            </li>
-
-        {{ render(controller('AntMediaBundle:Gallery:thumb', { 'id': gallery|sonata_urlsafeid } )) }}
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
+{% endblock %}
