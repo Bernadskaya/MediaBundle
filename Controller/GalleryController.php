@@ -29,11 +29,11 @@ class GalleryController extends BaseGalleryController
             ),
             array('createdAt'=>'DESC')
         );
-
-
+        $categories = $this->getDoctrine()->getRepository('AntWebBundle:Category')->findAll();
 
         return $this->render('AntMediaBundle:Gallery:index.html.twig', array(
             'galleries'   => $galleries,
+            'categories'   => $categories
         ));
     }
 
@@ -48,6 +48,7 @@ class GalleryController extends BaseGalleryController
             ),
             array('createdAt'=>'DESC')
         );
+        $categories = $this->getDoctrine()->getRepository('AntWebBundle:Category')->findAll();
 
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -58,7 +59,8 @@ class GalleryController extends BaseGalleryController
 
         return $this->render('AntMediaBundle:Gallery:last.html.twig', array(
             'galleries'   => $galleries,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'categories'   => $categories
 
         ));
     }
@@ -75,13 +77,9 @@ class GalleryController extends BaseGalleryController
             'id'      => $id,
             'enabled' => true
         ));
-
         if (!$gallery) {
             throw new NotFoundHttpException('unable to find the gallery with the id');
         }
-
-
-
         return $this->render('AntMediaBundle:Gallery:view.html.twig', array(
             'gallery'   => $gallery
         ));
@@ -96,7 +94,6 @@ class GalleryController extends BaseGalleryController
         if (!$gallery) {
             throw new NotFoundHttpException('unable to find the gallery with the id');
         }
-
         return $this->render('AntMediaBundle:Gallery:thumb.html.twig', array(
             'gallery'   => $gallery,
         ));

@@ -1,3 +1,10 @@
+<ul>
+    {% for category in categories %}
+        <li>
+            {{ category.name }}
+        </li>
+    {% endfor %}
+</ul>
 <ul  class="portfolio columns3">
     {% for gallery in pagination %}
         {{ include('AntMediaBundle:Gallery:_link_name.html.twig') }}

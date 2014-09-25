@@ -1,6 +1,13 @@
 {% extends 'AntWebBundle::layout.html.twig' %}
 {% block content %}
     <ul>
+        {% for category in categories %}
+            <li>
+                {{ category.name }}
+            </li>
+            {% endfor %}
+    </ul>
+    <ul>
         {% for gallery in galleries %}
             {{ include('AntMediaBundle:Gallery:_link_name.html.twig') }}
         {% endfor %}
