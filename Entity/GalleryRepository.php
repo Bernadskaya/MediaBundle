@@ -13,7 +13,7 @@ use Doctrine\ORM\EntityRepository;
 class GalleryRepository extends EntityRepository {
 
     public function findAll(){
-        return $this->findBy(array(), array('created'=>'DESC'));
+        return $this->findBy(array(), array('createdAt'=>'DESC'));
 
     }
 
@@ -23,7 +23,7 @@ class GalleryRepository extends EntityRepository {
         $qb->select('g')
             ->from('AntMediaBundle:Gallery', 'g')
             ->setParameter(1, $id)
-            ->where('g.id != ?1')
+            ->where('g.id != ?1', 'g.enabled = true')
             ->setMaxResults($max)
             ->orderBy('g.id', 'DESC')
         ;
