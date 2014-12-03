@@ -29,17 +29,6 @@ class Media extends BaseMedia
     protected $id;
 
     /**
-     * @var \Ant\WebBundle\Entity\News
-     */
-    private $news;
-
-    /**
-     * @var \Ant\WebBundle\Entity\Ad
-     */
-    private $ad;
-
-
-    /**
      * Get id
      *
      * @return integer $id
@@ -48,54 +37,5 @@ class Media extends BaseMedia
     {
         return $this->id;
     }
-
-    /**
-     * Set news
-     *
-     * @param \Ant\WebBundle\Entity\News $news
-     *
-     * @return Media
-     */
-    public function setNews($news = null)
-    {
-        $this->news = $news;
-
-        return $this;
-    }
-
-    /**
-     * Get news
-     *
-     * @return \Ant\WebBundle\Entity\News
-     */
-    public function getNews()
-    {
-        return $this->news;
-    }
-
-    /**
-     * Set ad
-     *
-     * @param \Ant\WebBundle\Entity\Ad $ad
-     *
-     * @return Media
-     */
-    public function setAd($ad = null)
-    {
-        $this->ad = $ad;
-
-        return $this;
-    }
-
-    /**
-     * Get ad
-     *
-     * @return \Ant\WebBundle\Entity\Ad
-     */
-    public function getAd()
-    {
-        return $this->ad;
-    }
-
 
 }

@@ -12,17 +12,8 @@
         name="Ant\MediaBundle\Entity\Media"
         table="ant_media"
         >
-
-
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
-        <one-to-one field="news" target-entity="Ant\WebBundle\Entity\News" mapped-by="media" orphan-removal="true">
-            <cascade><cascade-all/></cascade>
-        </one-to-one>
-
-        <one-to-one field="ad" target-entity="Ant\WebBundle\Entity\Ad" mapped-by="media" orphan-removal="true">
-            <cascade><cascade-all/></cascade>
-        </one-to-one>
     </entity>
 </doctrine-mapping>
